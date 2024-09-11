@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-bottom: 50px;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark-sharp-edges.png'); /* Exemplo de fundo com padrões */
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #002366;
+        }
+
+        .flashcard-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .flashcard {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flashcard-front {
+            background-color: #002366;
+            color: white;
+        }
+
+        .flashcard-back {
+            background-color: #f8f9fa;
+            color: black;
+            transform: rotateY(180deg);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #002366;
+            color: white;
+        }
+
+        /* Detalhes do fundo */
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #002366;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: -100px;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://www.svgrepo.com/show/354402/wave.svg') repeat-x;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flashcards Educacionais</h1>
+
+    <div class="flashcard-container">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Matemática: O que é um número primo?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>Número primo é aquele que só pode ser dividido por 1 e por ele mesmo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Geografia: Qual é o maior país do mundo?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>A Rússia é o maior país do mundo em extensão territorial.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Inglês: Como se diz 'bom dia' em inglês?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>'Good morning' é a forma de dizer 'bom dia' em inglês.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Português: O que é um substantivo?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>Substantivo é a classe de palavras que dá nome aos seres, objetos, lugares, etc.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Programação: O que significa HTML?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>HTML significa HyperText Markup Language, usada para criar páginas web.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>História: Em que ano ocorreu a Revolução Francesa?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>A Revolução Francesa ocorreu em 1789.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Flashcards Educacionais. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="circle"></div>
+    <div class="wave"></div>
+
+    <script>
+        function flipCard(card) {
+            card.querySelector('.flashcard-inner').classList.toggle('flip');
+        }
+    </script>
+</body>
+</html>
