@@ -31,7 +31,7 @@
         .flashcard-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr); /* Aumentado para 4 linhas */
             gap: 20px;
             margin: 20px;
         }
@@ -121,7 +121,7 @@
                     <p>Geografia: Onde está localizado a Síria?</p>
                 </div>
                 <div class="flashcard-back">
-                    <p>A Síria esta localizada no Oriente Médio.</p>
+                    <p>A Síria está localizada no Oriente Médio.</p>
                 </div>
             </div>
         </div>
@@ -166,6 +166,30 @@
                 </div>
                 <div class="flashcard-back">
                     <p>A 1ª Guerra Mundial ocorreu em 1914.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard de Química -->
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Química: O que é uma reação química?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>Uma reação química é um processo que transforma substâncias químicas em outras diferentes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flashcard de Filosofia -->
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <p>Filosofia: O que é a ética?</p>
+                </div>
+                <div class="flashcard-back">
+                    <p>A ética é o ramo da filosofia que estuda os princípios do bem e do mal.</p>
                 </div>
             </div>
         </div>
